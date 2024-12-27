@@ -47,7 +47,6 @@ Ensure you are working in **Ubuntu** or **Windows Subsystem for Linux (WSL)** be
 ### Organize Files
 
 - Move the **Bitty Processor** top module and all related modules (**ALU**, **Control Unit**, etc.) into the `src` directory.
-- Exclude unrelated modules such as the **Program Counter (PC)** and **branch logic** unless otherwise specified.
 
 ---
 
@@ -220,9 +219,6 @@ The Fetch Instruction Unit (FIU) manages the process of retrieving 16-bit instru
 - Verilator lint comments (`/* verilator lint_off ... */`) are essential for simulation. Do not delete them.
 - Adjust FSM logic in the top-module if additional delays or states are required for your design.
 - Familiarize yourself with the RTL files and test your system thoroughly using the provided environment and tools.
-
-Here is an explanation of the provided code and modules:
-
 ---
 
 ## **UART MODULE**
@@ -291,25 +287,6 @@ Manages the overall flow of operations with the following states:
 - **`stop_for_rw`**: Pauses system operation during data read/write.
 - **`uart_sel`**: Selects the UART data source (fetch module or Bitty processor).
 - **`tx_en`, `tx_data`**: Enable and data signals for UART transmission.
-
----
-
-### **Design Principles:**
-1. **Dynamic Baud Rate Configuration:**
-   - Adjusts clock cycles per bit based on input selection (`sel_baude_rate`).
-
-2. **Modular Integration:**
-   - Encapsulates key functionalities (fetch, branch logic, UART, etc.) into separate modules for clarity and reusability.
-
-3. **FSM-Based Control:**
-   - Ensures proper sequencing of fetch, execute, and communication tasks.
-
-4. **Simulation Support:**
-   - Includes **Verilator lint comments** to ensure smooth simulation and debugging.
-
----
-
-Here's an explanation of the provided files:
 
 ---
 
