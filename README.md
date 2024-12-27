@@ -2,6 +2,19 @@
 
 - [Read the documentation for project](docs/info.md)
 
+# Table of Contents
+
+1. [Getting Started](#getting-started)  
+2. [Environment Setup](#environment-setup)  
+3. [Preparing User Modules to Work with the System](#preparing-user-modules-to-work-with-the-system)  
+4. [Load Store Unit (LSU) Implementation Guide](#load-store-unit-lsu-implementation-guide)  
+5. [Fetch Instruction Unit (FIU)](#fetch-instruction-unit-fiu)  
+6. [**Top Module**](#top-module)  
+7. [How to test the system](#how-to-test-the-system)  
+
+---
+
+Each link navigates to the respective section within the document. Let me know if you'd like these links to be further customized or if you want assistance implementing them!
 
 # Bitty Processor Integration Guide
 
@@ -171,17 +184,12 @@ module lsu(
 
 ### Notes for Implementation
 
-1. **FSM Design**: Model the LSU FSM similar to the provided Fetch Instruction Unit (FIU). States may include:
-   - `IDLE`: Waiting for operation.
-   - `LOAD`: Receiving data from memory.
-   - `STORE`: Sending data to memory.
-   - `DONE`: Indicating operation completion.
-2. **Operation Flags**: Use `en_ls` to control the operation:
+1. **Operation Flags**: In provided example `en_ls` is used to control the load-store operation by Control Unit:
    - `00`: Idle
    - `01`: Load
    - `10`: Store
-   - `11`: Reserved/Error Handling
-3. **Testing**: Use the provided testbench `bitty-tt-template/test/new_tb.py` to validate LSU functionality.
+   - `11`: Reserved
+2. **Testing**: Use the provided testbench `bitty-tt-template/test/new_tb.py` to validate LSU functionality.
 
 ---
 
