@@ -9,7 +9,7 @@
 3. [Preparing User Modules to Work with the System](#preparing-user-modules-to-work-with-the-system)  
 4. [Load Store Unit (LSU) Implementation Guide](#load-store-unit-lsu-implementation-guide)  
 5. [Fetch Instruction Unit (FIU)](#fetch-instruction-unit-fiu)  
-6. [**Top Module**](#top-module)  
+6. [Top Module](#top-module)  
 7. [How to test the system](#how-to-test-the-system)  
 
 ---
@@ -184,12 +184,13 @@ module lsu(
 
 ### Notes for Implementation
 
-1. **Operation Flags**: In provided example `en_ls` is used to control the load-store operation by Control Unit:
+1. **Finite State Machine**: You can use Fetch Instruction Unit's FSM as an example to build one for LSU. The code can be found in src/fetch_instruction.v directory. The explanation is provided below.
+2. **Operation Flags**: In provided example `en_ls` is used to control the load-store operation by Control Unit:
    - `00`: Idle
    - `01`: Load
    - `10`: Store
    - `11`: Reserved
-2. **Testing**: Use the provided testbench `bitty-tt-template/test/new_tb.py` to validate LSU functionality.
+3. **Testing**: Use the provided testbench `bitty-tt-template/test/new_tb.py` to validate LSU functionality.
 
 ---
 
@@ -254,6 +255,9 @@ This is a simple 2-to-1 multiplexer that selects one of two inputs based on a co
 ---
 
 ## **Top Module**
+
+![396090847-89a714ac-a5bf-4ce8-848c-53a10e8f25c2](https://github.com/user-attachments/assets/74fc2865-f0b7-45e8-8a6f-d8512c8b2c74)
+
 ### File: `project_final.v`
 
 #### **Purpose:**
