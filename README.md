@@ -14,8 +14,6 @@
 
 ---
 
-Each link navigates to the respective section within the document. Let me know if you'd like these links to be further customized or if you want assistance implementing them!
-
 # Bitty Processor Integration Guide
 
 ## Overview
